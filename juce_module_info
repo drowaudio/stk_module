@@ -6,6 +6,8 @@
   "website":        "https://ccrma.stanford.edu/software/stk",
   "license":        "GPL/Commercial",
 
+  "dependencies":   [ { "id": "juce_core",   "version": "matching" } ],
+
   "include":        "stk.h",
 
   "compile":        [ { "file": "stk.cpp", "target": "! xcode" },
