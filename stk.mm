@@ -23,9 +23,4 @@
   ==============================================================================
 */
 
-//#pragma GCC diagnostic push
-//#pragma clang diagnostic ignored "-Wtautological-compare"
-
 #include "stk.cpp"
-
-//#pragma pop

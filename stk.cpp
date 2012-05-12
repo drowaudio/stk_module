@@ -43,6 +43,11 @@
  #pragma clang diagnostic ignored "-Wtautological-compare"
 #endif
 
+#if JUCE_MSVC
+ #pragma warning (push)
+ #pragma warning (disable: 4127 4702 4244 4305 4100 4996 4309)
+#endif
+
 #include "stk/ADSR.cpp"
 #include "stk/Asymp.cpp"
 #include "stk/BandedWG.cpp"
@@ -85,7 +90,6 @@
 #include "stk/ModalBar.cpp"
 #include "stk/Modulate.cpp"
 #include "stk/Moog.cpp"
-#include "stk/Mutex.cpp"
 #include "stk/Noise.cpp"
 #include "stk/NRev.cpp"
 #include "stk/OnePole.cpp"
@@ -106,7 +110,6 @@
 #include "stk/SingWave.cpp"
 #include "stk/Sitar.cpp"
 #include "stk/Skini.cpp"
-#include "stk/Socket.cpp"
 #include "stk/Sphere.cpp"
 #include "stk/StifKarp.cpp"
 #include "stk/Stk.cpp"
@@ -119,6 +122,11 @@
 #include "stk/VoicForm.cpp"
 #include "stk/Whistle.cpp"
 #include "stk/Wurley.cpp"
+
+#if JUCE_MSVC
+ #pragma warning (pop)
+ #pragma warning (disable: 4127 4702 4244 4305 4100 4996 4309)
+#endif
 
 #ifdef __clang__
  #pragma pop // -Wtautological-compare

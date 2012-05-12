@@ -36,8 +36,10 @@
  #define __MACOSX_CORE__
 #endif
 
-//#pragma GCC diagnostic push
-//#pragma clang diagnostic ignored "-Wtautological-compare"
+#if JUCE_MSVC
+ #pragma warning (push)
+ #pragma warning (disable: 4127 4702 4244 4305 4100 4996 4309)
+#endif
 
 //=============================================================================
 #include "stk/ADSR.h"
@@ -90,7 +92,6 @@
 #include "stk/ModalBar.h"
 #include "stk/Modulate.h"
 #include "stk/Moog.h"
-#include "stk/Mutex.h"
 #include "stk/Noise.h"
 #include "stk/NRev.h"
 #include "stk/OnePole.h"
@@ -112,7 +113,6 @@
 #include "stk/SingWave.h"
 #include "stk/Sitar.h"
 #include "stk/Skini.h"
-#include "stk/Socket.h"
 #include "stk/Sphere.h"
 #include "stk/StifKarp.h"
 #include "stk/Stk.h"
@@ -129,6 +129,8 @@
 #include "stk/WvIn.h"
 #include "stk/WvOut.h"
 
-//#pragma pop
+#if JUCE_MSVC
+ #pragma warning (pop)
+#endif
 
 #endif   // __STK_STKHEADER__
